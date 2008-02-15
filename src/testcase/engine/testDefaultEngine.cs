@@ -67,7 +67,7 @@ namespace org.opencbr.core.testcase.engine
 			_problem.AddFeature("speed", FeatureType.TYPE_FEATURE_FLOAT,
 				19.0, 0.3, false, false);
 			_problem.AddFeature("temp", FeatureType.TYPE_FEATURE_FLOAT,
-				51.0, 0.7, false, false);
+                44.0, 0.7, false, false);   ////initialize to 51 or 44 to demo retrieval of closest cases (3 versus 4) from Database
 			_problem.AddFeature("quality", FeatureType.TYPE_FEATURE_FLOAT,
 				232.0, 1.0, false, false);
 
