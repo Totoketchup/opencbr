@@ -12,7 +12,7 @@ namespace org.opencbr.core.testcase.context
 	public class testXMLConfigFile
 	{
 		XMLConfigFile file = null;
-		string path = @"F:\topics\org.opencbr.core\context\config.xml";
+		string path = @"C:\topics\org.opencbr.core\context\config.xml";
 		public testXMLConfigFile()
 		{
 		}

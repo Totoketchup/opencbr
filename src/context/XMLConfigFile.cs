@@ -9,10 +9,12 @@ namespace org.opencbr.core.context
 	/// </summary>
 	public class XMLConfigFile
 	{
-		private static readonly string TOKEN_NODE_CONFIG = "opencbr-config";
-		private static readonly string TOKEN_NODE_MAPPING = "mapping";
+        private static readonly string TOKEN_NAMESPACE_CONFIG = "//config:";
+        private static readonly string TOKEN_NODE_CONFIG = TOKEN_NAMESPACE_CONFIG;
+        //private static readonly string TOKEN_NODE_CONFIG = "opencbr-config";
+        //private static readonly string TOKEN_NODE_MAPPING = "mapping";
 		private static readonly string TOKEN_NODE_METHOD = "method";
-		private static readonly string TOKEN_NODE_PARAMETERS = "parameters";
+		//private static readonly string TOKEN_NODE_PARAMETERS = "parameters";
 		private static readonly string TOKEN_NODE_PARAMETER = "parameter";
 		private static readonly string TOKEN_ATTR_INTERFACE = "interface";
 		private static readonly string TOKEN_ATTR_IMPL = "impl";
@@ -35,21 +37,28 @@ namespace org.opencbr.core.context
 			{
 				XmlDocument doc = new XmlDocument();
 				doc.Load(_path);
+                //xmlns="http://tempuri.org/config.xsd"
+                XmlNamespaceManager manager = new XmlNamespaceManager(doc.NameTable);
 
-				//read the mapping settting
-				string xmlPath  = TOKEN_NODE_CONFIG + "/" 
-					+ TOKEN_NODE_MAPPING + "/" + TOKEN_NODE_METHOD;
-				XmlNodeList methods = doc.SelectNodes(xmlPath);
+                if (doc.DocumentElement.NamespaceURI == "")
+                    manager.AddNamespace("config", "http://tempuri.org/config.xsd");
+                else
+                    manager.AddNamespace("config", doc.DocumentElement.NamespaceURI);
+
+                XmlNode rootNode = doc.SelectSingleNode("//config:opencbr-config", manager);
+
+                string xmlPath = TOKEN_NAMESPACE_CONFIG
+                    + TOKEN_NODE_METHOD;
+                XmlNodeList methods = rootNode.SelectNodes(xmlPath, manager);
 				if (methods != null 
 					&& methods.Count > 0)
 				{
 					AddMappingInfo(methods);
 				}
-				//read the parameter setting
-				xmlPath = TOKEN_NODE_CONFIG + "/" 
-					+ TOKEN_NODE_PARAMETERS + "/"
+                //read the parameter setting
+                xmlPath = TOKEN_NAMESPACE_CONFIG 
 					+ TOKEN_NODE_PARAMETER;
-				XmlNodeList parameters = doc.SelectNodes(xmlPath);
+                XmlNodeList parameters = rootNode.SelectNodes(xmlPath, manager);
 				if (parameters != null
 					&& parameters.Count > 0)
 				{

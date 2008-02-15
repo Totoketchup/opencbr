@@ -47,13 +47,18 @@ namespace org.opencbr.core.testcase.db
 		[SetUp]public void Init()
 		{
 			string url = 
-@"$CaseID=cooling & $DbType=Access & $DataSource=Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\xw\ÏîÄ¿\topics\org.opencbr.core\db\casebase.mdb & $DictionaryTable=tbl_dic & $DataTable=tbl_data";
+@"$CaseID=cooling & $DbType=Access & $DataSource=Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\topics\org.opencbr.core\db\casebase.mdb & $DictionaryTable=tbl_dic & $DataTable=tbl_data";
 			_db = new DefaultDb(url);
 
 		}
 		[Test]public void testDbHelper()
 		{
 			ArrayList cases = _db.GetCases();
+            if (cases == null)
+            {
+                _db.SetEnv("engine1");              // explicit call to set up enviroment (restructure NUnit sequence?)
+                cases = _db.GetCases();
+            }
 			foreach(Case c in cases)
 			{
 				System.Console.WriteLine(c.GetCaseID());

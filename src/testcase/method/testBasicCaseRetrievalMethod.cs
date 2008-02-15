@@ -28,6 +28,8 @@ namespace org.opencbr.core.testcase.method
 		}
 		[SetUp]public void Init()
 		{
+            if (list.Count > 0)
+                list.Clear();
 			c1.AddFeature("speed", FeatureType.TYPE_FEATURE_FLOAT,
 				2.0, 0.5, false, false);
 			c2.AddFeature("speed", FeatureType.TYPE_FEATURE_FLOAT,
@@ -103,7 +105,7 @@ namespace org.opencbr.core.testcase.method
 			//test case 1
 			stat1 = StatFactory.newInstance();
 			stat1.SetCBRCase(c1);
-			stat1.SetCaseSimilarity(111.098);
+            stat1.SetCaseSimilarity(111.098);
 			//test case 2 for upper bound
 			stat2 = StatFactory.newInstance();
 			stat2.SetCBRCase(c1);

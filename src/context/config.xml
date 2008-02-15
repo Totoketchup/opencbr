@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="gb2312" ?>
-<opencbr-config xmlns="http://tempuri.org/config.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<opencbr-config>
+	<parameters>
+		<parameter interface="org.opencbr.core.method.ICaseRetrievalMethod" impl="org.opencbr.core.method.DefaultCaseRetrievalMethod" />
+	</parameters>
 	<mapping>
 		<method interface="org.opencbr.core.method.ICaseRetrievalMethod" impl="org.opencbr.core.method.DefaultCaseRetrievalMethod" />
 		<method interface="org.opencbr.core.method.ICaseReuseMethod" impl="org.opencbr.core.method.DefaultCaseReuseMethod" />
@@ -10,19 +13,4 @@
 		<method interface="org.opencbr.core.method.ICaseRestoreMethod" impl="org.opencbr.core.method.DefaultCaseRestoreMethod" />
 		<method interface="org.opencbr.core.casebase.ICaseBaseInput" impl="org.opencbr.core.casebase.DefaultCaseBaseInput" />
 	</mapping>
-	<parameters>
-		<parameter name="CaseBaseInputType" value="1" />
-		<parameter name="SimilarityThrehold" value="0.3" />
-		<!--
-		CaseBaseURL format:
-		(1) for *.ocbr file, the value of CaseBaseURL is the file path,
-		for example
-		<parameter name="CaseBaseURL" value="e:\casebase\machine.ocbr" />
-		(2) for db, the value of CaseBaseURL is the datasource URL and database table,
-		for example
-		<parameter name="CaseBaseURL" value="$CaseID=cooling & $DbType=Access$DataSource=mydatasource & $DictionaryTable=tbl_dic & $DataTable=tbl_data " />
-		<parameter name="CaseBaseURL" value="E:\xw\项目\topics\doc\casebase specification.txt" /> 
-		 -->
-		<parameter name="CaseBaseURL" value="$CaseID=cooling&amp;$DbType=Access&amp;$DataSource=Provider=Microsoft.Jet.OLEDB.4.0;Data Source=F:\topics\doc\baoData.mdb&amp;$DictionaryTable=tbl_dic&amp;$DataTable=tbl_finishData&amp;$Conditions=" />
-	</parameters>
 </opencbr-config>

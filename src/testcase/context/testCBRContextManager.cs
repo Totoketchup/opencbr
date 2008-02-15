@@ -11,8 +11,9 @@ namespace org.opencbr.core.testcase.context
 	[TestFixture]
 	public class testCBRContextManager
 	{
-		string path = @"../../context/config.xml";
-		public testCBRContextManager()
+        //string path = @"../../context/config.xml";
+        string path = @"C:\topics\org.opencbr.core\context\config.xml";
+        public testCBRContextManager()
 		{
 			
 		}
@@ -24,7 +25,7 @@ namespace org.opencbr.core.testcase.context
 		{
 
 			CBRContextManager.Load("engine1", path);
-			ICBRContext ctx =  CBRContextManager.GetCBRContext(path);
+			ICBRContext ctx =  CBRContextManager.GetCBRContext("engine1");  //path);
 
 			System.Console.WriteLine(ctx.GetCaseBase().ToString());
 			System.Console.WriteLine(ctx.GetCaseBase().GetEnv());

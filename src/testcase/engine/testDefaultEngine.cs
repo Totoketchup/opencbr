@@ -40,29 +40,36 @@ namespace org.opencbr.core.testcase.engine
 	public class testDefaultEngine
 	{
 		IEngine _engine = new DefaultEngine();
-		string _env = @"..\..\context\config.xml";
+		string _env = @"C:\topics\org.opencbr.core\context\config.xml"; //@"..\..\context\config.xml";
 		Case _problem = new Case(1, "cooling", "testcase problem");
 		public testDefaultEngine()
 		{
 		}
 		[SetUp]public void Init()
 		{
-			_problem.AddFeature("硬度等级", FeatureType.TYPE_FEATURE_INT,
-				193, 1, false, false);
-			_problem.AddFeature("厚度等级", FeatureType.TYPE_FEATURE_INT,
-				2, 1, false, false);
-			_problem.AddFeature("目标卷温等级", FeatureType.TYPE_FEATURE_INT,
-				1, 1, false, false);
-			_problem.AddFeature("目标卷温", FeatureType.TYPE_FEATURE_FLOAT,
-				570.056, 1, false, false);
-			_problem.AddFeature("终轧厚度", FeatureType.TYPE_FEATURE_FLOAT,
-				2.6, 1, false, false);
-			_problem.AddFeature("终轧速度", FeatureType.TYPE_FEATURE_FLOAT,
-				11.12, 1, false, false);
-			_problem.AddFeature("水温", FeatureType.TYPE_FEATURE_FLOAT,
-				31.35, 1, false, false);
-			_problem.AddFeature("上始阀", FeatureType.TYPE_FEATURE_INT,
-				45, 1, true, true);
+            //_problem.AddFeature("硬度等级", FeatureType.TYPE_FEATURE_INT,
+            //    193, 1, false, false);
+            //_problem.AddFeature("厚度等级", FeatureType.TYPE_FEATURE_INT,
+            //    2, 1, false, false);
+            //_problem.AddFeature("目标卷温等级", FeatureType.TYPE_FEATURE_INT,
+            //    1, 1, false, false);
+            //_problem.AddFeature("目标卷温", FeatureType.TYPE_FEATURE_FLOAT,
+            //    570.056, 1, false, false);
+            //_problem.AddFeature("终轧厚度", FeatureType.TYPE_FEATURE_FLOAT,
+            //    2.6, 1, false, false);
+            //_problem.AddFeature("终轧速度", FeatureType.TYPE_FEATURE_FLOAT,
+            //    11.12, 1, false, false);
+            //_problem.AddFeature("水温", FeatureType.TYPE_FEATURE_FLOAT,
+            //    31.35, 1, false, false);
+            //_problem.AddFeature("上始阀", FeatureType.TYPE_FEATURE_INT,
+            //    45, 1, true, true);
+
+			_problem.AddFeature("speed", FeatureType.TYPE_FEATURE_FLOAT,
+				19.0, 0.3, false, false);
+			_problem.AddFeature("temp", FeatureType.TYPE_FEATURE_FLOAT,
+				51.0, 0.7, false, false);
+			_problem.AddFeature("quality", FeatureType.TYPE_FEATURE_FLOAT,
+				232.0, 1.0, false, false);
 
 			_engine.SetEnvironmentVariable(_env);
 			_engine.SetProblem(_problem);
