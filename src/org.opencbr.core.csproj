@@ -1,355 +1,523 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C47A5143-673E-47CD-9DDF-83EF63527BF5}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
-    <AssemblyKeyContainerName>
-    </AssemblyKeyContainerName>
-    <AssemblyName>org.opencbr.core</AssemblyName>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-    <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-    <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <DelaySign>false</DelaySign>
-    <OutputType>Library</OutputType>
-    <RootNamespace>org.opencbr.core</RootNamespace>
-    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>
-    </StartupObject>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <Optimize>false</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>full</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BaseAddress>285212672</BaseAddress>
-    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <ConfigurationOverrideFile>
-    </ConfigurationOverrideFile>
-    <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
-    <DebugSymbols>false</DebugSymbols>
-    <FileAlignment>4096</FileAlignment>
-    <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
-    <Optimize>true</Optimize>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>4</WarningLevel>
-    <DebugType>none</DebugType>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="log4net">
-      <Name>log4net</Name>
-      <HintPath>lib\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <Name>nunit.framework</Name>
-      <HintPath>D:\NUnit 2.2\bin\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <Name>System</Name>
-    </Reference>
-    <Reference Include="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Include="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="casebase\CaseBaseInputType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="casebase\DefaultCaseBase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="casebase\DefaultCaseBaseInput.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="casebase\ICaseBase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="casebase\ICaseBaseInput.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\CBRContextFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\CBRContextManager.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\ConfigInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\ContextException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\DefaultCBRContext.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\ICBRContext.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\IEnv.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="context\XMLConfigFile.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\AccessDatabase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\DatabaseFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\DataSource.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\DbFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\DbType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\DefaultDb.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\IDb.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\MssqlDatabase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\MysqlDatabase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\OracleDatabase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db\Token.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="engine\DefaultEngine.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="engine\EngineFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="engine\EngineManager.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="engine\IEngine.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\Case.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\CaseFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\CaseType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\Feature.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\FeatureList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\FeatureType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\IStat.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\NoSupportTypeException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\Stat.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="express\StatFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="file\DefaultOCBRFile.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="file\IOCBRFile.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="file\OCBRFileFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="file\Token.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\CasePhaseFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseRestore.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseRestoreMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseRetrieval.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseRetrievalMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseReuse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseReuseMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseRevise.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\DefaultCaseReviseMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseRestore.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseRestoreMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseRetrieval.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseRetrievalMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseReuse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseReuseMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseRevise.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\ICaseReviseMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\IMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\MethodList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="method\MethodType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Similarity\EuclideanSimilarity.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Similarity\ISimilarity.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Similarity\NeighborSimilarity.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Similarity\TypeHandle.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="strategy\ICaseReuseStrategy.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="strategy\MaxCaseReuseStrategy.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="strategy\MeanCaseReuseStrategy.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="strategy\TypeHandle.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\context\testCBRContextManager.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\context\testXMLConfigFile.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\db\testDefaultDb.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\engine\testDefaultEngine.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\file\testDefaultOCBRFile.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\method\testBasicCaseRetrievalMethod.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\similarity\testEuclideanSimilarity.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="testcase\util\testDynamicCreator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="util\DynamicCreator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="util\ErrorCode.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Version.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Content Include="context\config.xml" />
-    <Content Include="context\config.xsd" />
-    <None Include="context\config.xsx">
-      <DependentUpon>config.xsd</DependentUpon>
-    </None>
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
-</Project>
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{C47A5143-673E-47CD-9DDF-83EF63527BF5}"
+    > 
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "org.opencbr.core"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "org.opencbr.core"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "log4net"
+                    AssemblyName = "log4net"
+                    HintPath = "lib\log4net.dll"
+                />
+                <Reference
+                    Name = "nunit.framework"
+                    AssemblyName = "nunit.framework"
+                    HintPath = "D:\NUnit 2.2\bin\nunit.framework.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Version.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "casebase\CaseBaseInputType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "casebase\DefaultCaseBase.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "casebase\DefaultCaseBaseInput.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "casebase\ICaseBase.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "casebase\ICaseBaseInput.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\CBRContextFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\CBRContextManager.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\config.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "context\config.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "context\config.xsx"
+                    DependentUpon = "config.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "context\ConfigInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\ContextException.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\DefaultCBRContext.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\ICBRContext.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\IEnv.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "context\XMLConfigFile.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\AccessDatabase.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\DatabaseFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\DataSource.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\DbFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\DbType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\DefaultDb.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\IDb.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\MssqlDatabase.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\MysqlDatabase.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\OracleDatabase.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "db\Token.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "engine\DefaultEngine.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "engine\EngineFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "engine\EngineManager.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "engine\IEngine.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\Case.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\CaseFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\CaseType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\Feature.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\FeatureList.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\FeatureType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\IStat.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\NoSupportTypeException.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\Stat.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "express\StatFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "file\DefaultOCBRFile.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "file\IOCBRFile.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "file\OCBRFileFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "file\Token.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\CasePhaseFactory.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseRestore.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseRestoreMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseRetrieval.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseRetrievalMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseReuse.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseReuseMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseRevise.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\DefaultCaseReviseMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseRestore.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseRestoreMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseRetrieval.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseRetrievalMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseReuse.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseReuseMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseRevise.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\ICaseReviseMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\IMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\MethodList.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "method\MethodType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Similarity\EuclideanSimilarity.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Similarity\ISimilarity.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Similarity\NeighborSimilarity.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Similarity\TypeHandle.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "strategy\ICaseReuseStrategy.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "strategy\MaxCaseReuseStrategy.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "strategy\MeanCaseReuseStrategy.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "strategy\TypeHandle.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\context\testCBRContextManager.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\context\testXMLConfigFile.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\db\testDefaultDb.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\engine\testDefaultEngine.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\file\testDefaultOCBRFile.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\method\testBasicCaseRetrievalMethod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\similarity\testEuclideanSimilarity.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "testcase\util\testDynamicCreator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "util\DynamicCreator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "util\ErrorCode.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+
