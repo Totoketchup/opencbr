@@ -4,7 +4,7 @@
         ProductVersion = "7.10.3077"
         SchemaVersion = "2.0"
         ProjectGuid = "{C47A5143-673E-47CD-9DDF-83EF63527BF5}"
-    > 
+    >
         <Build>
             <Settings
                 ApplicationIcon = ""
@@ -87,7 +87,8 @@
                 <Reference
                     Name = "nunit.framework"
                     AssemblyName = "nunit.framework"
-                    HintPath = "D:\NUnit 2.2\bin\nunit.framework.dll"
+                    HintPath = "C:\Program Files\NUnit 2.5.2\bin\net-1.1\framework\nunit.framework.dll"
+                    AssemblyFolderKey = "hkcu\dn\nunit 2.5.2.9222"
                 />
             </References>
         </Build>
