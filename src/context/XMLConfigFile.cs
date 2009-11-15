@@ -9,7 +9,7 @@ namespace org.opencbr.core.context
 	/// </summary>
 	public class XMLConfigFile
 	{
-        private static readonly string TOKEN_NAMESPACE_CONFIG = "//config:";
+        private static readonly string TOKEN_NAMESPACE_CONFIG = "opencbr-config";
         private static readonly string TOKEN_NODE_CONFIG = TOKEN_NAMESPACE_CONFIG;
         //private static readonly string TOKEN_NODE_CONFIG = "opencbr-config";
         //private static readonly string TOKEN_NODE_MAPPING = "mapping";
@@ -37,28 +37,19 @@ namespace org.opencbr.core.context
 			{
 				XmlDocument doc = new XmlDocument();
 				doc.Load(_path);
-                //xmlns="http://tempuri.org/config.xsd"
-                XmlNamespaceManager manager = new XmlNamespaceManager(doc.NameTable);
 
-                if (doc.DocumentElement.NamespaceURI == "")
-                    manager.AddNamespace("config", "http://tempuri.org/config.xsd");
-                else
-                    manager.AddNamespace("config", doc.DocumentElement.NamespaceURI);
+                XmlNode rootNode = doc.SelectSingleNode(TOKEN_NAMESPACE_CONFIG);
 
-                XmlNode rootNode = doc.SelectSingleNode("//config:opencbr-config", manager);
-
-                string xmlPath = TOKEN_NAMESPACE_CONFIG
-                    + TOKEN_NODE_METHOD;
-                XmlNodeList methods = rootNode.SelectNodes(xmlPath, manager);
+                string xmlPath = "mapping/" + TOKEN_NODE_METHOD;
+                XmlNodeList methods = rootNode.SelectNodes(xmlPath);
 				if (methods != null 
 					&& methods.Count > 0)
 				{
 					AddMappingInfo(methods);
 				}
                 //read the parameter setting
-                xmlPath = TOKEN_NAMESPACE_CONFIG 
-					+ TOKEN_NODE_PARAMETER;
-                XmlNodeList parameters = rootNode.SelectNodes(xmlPath, manager);
+                xmlPath = "parameters/" + TOKEN_NODE_PARAMETER;
+                XmlNodeList parameters = rootNode.SelectNodes(xmlPath);
 				if (parameters != null
 					&& parameters.Count > 0)
 				{
