@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gb2312" ?> 
+<mapping>
+	<org.opencbr.core.method.ICaseRetrievalMethod>
+		<impl>org.opencbr.core.method.DefaultCaseRetrievalMethod</impl>
+	</org.opencbr.core.method.ICaseRetrievalMethod>
+	<org.opencbr.core.method.ICaseReuseMethod>
+		<impl>org.opencbr.core.method.DefaultCaseReuseMethod</impl>
+	</org.opencbr.core.method.ICaseReuseMethod>
+	<org.opencbr.core.method.ICaseReviseMethod>
+		<impl>org.opencbr.core.method.DefaultCaseReviseMethod</impl>
+	</org.opencbr.core.method.ICaseReviseMethod>
+	<org.opencbr.core.Similarity.ISimilarity>	
+		<impl>org.opencbr.core.Similarity.EuclideanSimilarity</impl>
+		<impl>org.opencbr.core.NeighborSimilarity</impl>
+	</org.opencbr.core.Similarity.ISimilarity>
+	<org.opencbr.core.strategy.ICaseReuseStrategy>
+		<impl>org.opencbr.core.strategy.MaxCaseReuseStrategy</impl>
+		<impl>org.opencbr.core.strategy.MeanCaseReuseStrategy</impl>
+	</org.opencbr.core.strategy.ICaseReuseStrategy>
+	<org.opencbr.core.casebase.ICaseBase>
+		<impl>org.opencbr.core.casebase.DefaultCaseBase</impl>
+	</org.opencbr.core.casebase.ICaseBase>
+	<org.opencbr.core.method.ICaseRestoreMethod>
+		<impl>org.opencbr.core.method.DefaultCaseRestoreMethod</impl>
+	</org.opencbr.core.method.ICaseRestoreMethod>
+	<org.opencbr.core.casebase.ICaseBaseInput>
+		<impl>org.opencbr.core.casebase.DefaultCaseBaseInput</impl>
+	</org.opencbr.core.casebase.ICaseBaseInput>
+</mapping>

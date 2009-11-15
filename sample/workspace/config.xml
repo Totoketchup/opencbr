@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<opencbr-config>
+	<mapping>
+		<method interface="org.opencbr.core.method.ICaseRetrievalMethod" impl="org.opencbr.core.method.DefaultCaseRetrievalMethod" />
+		<method interface="org.opencbr.core.method.ICaseReuseMethod" impl="org.opencbr.core.method.DefaultCaseReuseMethod" />
+		<method interface="org.opencbr.core.method.ICaseReviseMethod" impl="org.opencbr.core.method.DefaultCaseReviseMethod" />
+		<method interface="org.opencbr.core.Similarity.ISimilarity" impl="org.opencbr.core.Similarity.EuclideanSimilarity" />
+		<method interface="org.opencbr.core.strategy.ICaseReuseStrategy" impl="org.opencbr.core.strategy.MaxCaseReuseStrategy" />
+		<method interface="org.opencbr.core.casebase.ICaseBase" impl="org.opencbr.core.casebase.DefaultCaseBase" />
+		<method interface="org.opencbr.core.method.ICaseRestoreMethod" impl="org.opencbr.core.method.DefaultCaseRestoreMethod" />
+		<method interface="org.opencbr.core.casebase.ICaseBaseInput" impl="org.opencbr.core.casebase.DefaultCaseBaseInput" />
+	</mapping>
+	<parameters>
+		<parameter name="CaseBaseInputType" value="2" />
+		<parameter name="SimilarityThrehold" value="0.9" />
+		<parameter name="CaseBaseURL" value="D:\projects\opencbr\sample\workspace\sample.ocbr" />
+	</parameters>
+</opencbr-config>

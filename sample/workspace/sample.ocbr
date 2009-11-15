@@ -1,0 +1,15 @@
+#comment
+@Case cooling(speed,temp,quality)
+#			type, key, index,weight
+@Feature	speed(float, false, true, 0.5)
+@Feature	temp(float, false, true, 0.5)
+@Feature	quality(float,true,true, 1)
+@Data
+23.2,45,34
+24.5,46,21
+21.3,45,23
+78,67,24
+129,893,43
+139,90,99
+
+
